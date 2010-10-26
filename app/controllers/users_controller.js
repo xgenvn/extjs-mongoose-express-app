@@ -3,7 +3,8 @@ var actions = {};
 actions.index = function(request,response){
   User.find().all(function(users){
     response.send({
-      results :  users
+      results :  users,
+      total : users.length
     })
   });
 };

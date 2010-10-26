@@ -22,14 +22,14 @@ Application.grid = new Ext.grid.GridPanel({
   store : Application.stores.users,
   colModel : new Ext.grid.ColumnModel({
     columns : [{
-      header : "First Name",
-      dataIndex : "first_name"
+      header : "First Name"
     },{
-      header : "Last Name",
-      dataIndex : "last_name"
+      header : "Last Name"
     },{
       header : "Email",
-      dataIndex : "email"
+      renderer : function(a,b,c){
+        console.log(Ext.encode(c.data));
+      }
     }]
   }),
   tbar : [{

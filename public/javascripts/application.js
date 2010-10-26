@@ -3,16 +3,23 @@ var Application = {};
 Ext.namespace("Application.models");
 
 Application.models.user = Ext.data.Record.create([
-  {name : 'first_name'},
-  {name : 'last_name'},
-  {name : 'email'}
+  {name : 'first_name',type:'string',allowBlank:false},
+  {name : 'last_name',type:'string',allowBlank:false},
+  {name : 'email',type:'string',allowBlank:false}
 ]);
 Ext.namespace("Application.stores");
 
 Application.stores.users = new Ext.data.JsonStore({
   url : "/users",
+  restful : true,
+  idProperty : '_id',
   root : 'results',
-  restful : true
+  totalProperty : 'total',
+  fields : [
+    {name : 'first_name',type:'string',allowBlank:false},
+    {name : 'last_name',type:'string',allowBlank:false},
+    {name : 'email',type:'string',allowBlank:false}
+  ]
 });
 Ext.namespace("Application.util");
 
@@ -33,14 +40,14 @@ Application.grid = new Ext.grid.GridPanel({
   store : Application.stores.users,
   colModel : new Ext.grid.ColumnModel({
     columns : [{
-      header : "First Name",
-      dataIndex : "first_name"
+      header : "First Name"
     },{
-      header : "Last Name",
-      dataIndex : "last_name"
+      header : "Last Name"
     },{
       header : "Email",
-      dataIndex : "email"
+      renderer : function(a,b,c){
+        console.log(Ext.encode(c.data));
+      }
     }]
   }),
   tbar : [{
