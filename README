@@ -1,4 +1,13 @@
-install node.js && npm
+This is an example of an ExtJS component that interacts with node.js and mongodb.
+
+I use mongoose as the ORM and Express as the application framework on top of node.js.  
+
+I use the ruby tool sprockets to keep my javascript cleanly organized.
+
+You should have node.js and npm already installed.
+
+install sprockets: gem install sprockets
+
 install socket.io: npm install http://cl.ly/2dgx/content
 install redis-client: npm install http://github.com/technoweenie/redis-node-client/tarball/npm
 install mongoose: npm install mongoose
