@@ -1,0 +1,5 @@
+install node.js && npm
+install socket.io: npm install http://cl.ly/2dgx/content
+install redis-client: npm install http://github.com/technoweenie/redis-node-client/tarball/npm
+install mongoose: npm install mongoose
+install haml: npm install haml
