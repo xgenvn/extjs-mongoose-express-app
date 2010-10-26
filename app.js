@@ -1,7 +1,3 @@
-/**
- * Module dependencies.
- */
-
 var express = require('express'),
   mongoose = require("mongoose").Mongoose;
   redis = require("redis-client").createClient(),

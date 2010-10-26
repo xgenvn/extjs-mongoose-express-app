@@ -6,9 +6,22 @@ I use the ruby tool sprockets to keep my javascript cleanly organized.
 
 You should have node.js and npm already installed.
 
-install sprockets: gem install sprockets
+To get all of the dependencies:
 
-install socket.io: npm install http://cl.ly/2dgx/content
-install redis-client: npm install http://github.com/technoweenie/redis-node-client/tarball/npm
-install mongoose: npm install mongoose
-install haml: npm install haml
+#for javascript tools
+gem install sprockets
+
+#socket.io for websockets abstraction
+npm install http://cl.ly/2dgx/content
+
+#redis client, for socket.io pub/sub
+npm install http://github.com/technoweenie/redis-node-client/tarball/npm
+
+#express, mongoose, haml, etc
+npm install express
+npm install mongoose
+npm install haml
+
+to run the server:
+
+node app.js
